@@ -41,6 +41,13 @@ function getItemData(element){
   	modalItems.appendChild(modalItemsRow)
 }
 
+function getSum(total, num ) {
+  num = Number(num.price[0]) ?
+  Number(num.price) :
+  Number(num.price.slice(1))
+  return total + num
+}
+
 function getTotalPrice() {
   totalPrice = itemsArray.reduce(getSum, 0)
   return totalPrice
