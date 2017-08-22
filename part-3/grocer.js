@@ -53,5 +53,14 @@ function getTotalPrice() {
   return totalPrice
 }
 
+function clearCart() {
+  while (modalItems.firstChild) {
+    modalItems.removeChild(modalItems.firstChild);
+  }
+  itemsArray = []
+  showTotalPrice.innerHTML = "$0.00"
+  cartCounter.innerHTML = "0"
+}
+
 cartButton.addEventListener("click", openModal)
 closeButton.addEventListener("click", closeModal)
