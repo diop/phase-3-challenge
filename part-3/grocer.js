@@ -53,6 +53,7 @@ function getTotalPrice() {
   return totalPrice
 }
 
+
 function clearCart() {
   while (modalItems.firstChild) {
     modalItems.removeChild(modalItems.firstChild);
@@ -64,3 +65,4 @@ function clearCart() {
 
 cartButton.addEventListener("click", openModal)
 closeButton.addEventListener("click", closeModal)
+clearCartButton.addEventListener("click", clearCart)
