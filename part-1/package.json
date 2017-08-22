@@ -1,0 +1,19 @@
+{
+  "name": "part-1",
+  "version": "1.0.0",
+  "description": "Phase 3 Challenge Part 1",
+  "main": "nodemon app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Fode Diop",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4"
+  },
+  "devDependencies": {
+    "morgan": "^1.8.2",
+    "nodemon": "^1.11.0"
+  }
+}
