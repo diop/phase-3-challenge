@@ -11,6 +11,20 @@ const getProductsBySection = section => {
   `) 
 }
 
+const getOrdersByShopperId = id => {
+  return db.any(`
+    SELECT orders.id, SUM(grocery_items.price) AS total_cost
+    FROM orders
+    JOIN order_items
+    ON order_items.id = orders.id
+    JOIN grocery_items
+    ON grocery_items.id = order_items.item_id
+    WHERE orders.shopper_id = '${id}'
+    GROUP BY orders.id
+  `)
+}
+
 module.exports = {
   getProductsBySection,
+  getOrdersByShopperId,
 }
