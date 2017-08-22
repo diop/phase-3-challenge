@@ -117,7 +117,7 @@ body {
 /* MODAL SECTION */
 
 /* The Modal (background) */
-.modal {
+.modal-overlay {
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   height: 100%;
@@ -132,7 +132,7 @@ body {
 }
 
 /* Modal Content */
-.modal-content {
+.modal-container {
   background-color: rgba(255, 255, 255, 1);
   border: 1px solid rgba(110, 107, 107, 1);
   display: flex;
@@ -147,7 +147,6 @@ body {
   z-index: 3;
 }
 
-/* Modal Body */
 .modal-body {
   flex-direction: column;
 }
