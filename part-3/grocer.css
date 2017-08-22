@@ -114,74 +114,80 @@ body {
   flex: 0;
 }
 
+/* MODAL SECTION */
+
 /* The Modal (background) */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-/* Modal Header */
-.modal-header {
-    padding: 2px 16px;
-    background-color: #5cb85c;
-    color: white;
-}
-
-/* Modal Body */
-.modal-body {padding: 2px 16px;}
-
-/* Modal Footer */
-.modal-footer {
-    padding: 2px 16px;
-    background-color: #5cb85c;
-    color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  padding: 100px 0 0 0;
+  position: fixed;
+  right: 0;
+  width: 100%;
+  visibility: hidden;
+  z-index: 1;
 }
 
 /* Modal Content */
 .modal-content {
-    position: relative;
-    background-color: #fefefe;
-    margin: auto;
-    padding: 0;
-    border: 1px solid #888;
-    width: 80%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    -webkit-animation-name: animatetop;
-    -webkit-animation-duration: 0.4s;
-    animation-name: animatetop;
-    animation-duration: 0.4s
+  background-color: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(110, 107, 107, 1);
+  display: flex;
+  flex-direction: column;
+  left: 22%;
+  margin: auto;
+  padding: 20px;
+  position: absolute;
+  top: 25%;
+  visibility: hidden;
+  width: 60%;
+  z-index: 3;
 }
 
-/* The Close Button */
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+/* Modal Body */
+.modal-body {
+  flex-direction: column;
 }
 
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+.modal-header, .modal-body, .modal-footer  {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-/* Add Animation */
-@-webkit-keyframes animatetop {
-    from {top: -300px; opacity: 0} 
-    to {top: 0; opacity: 1}
+.cart-close:hover,
+.cart-close:focus {
+  color: rgba(125, 119, 119, 1);
+  cursor: pointer;
+  text-decoration: none;
 }
 
-@keyframes animatetop {
-    from {top: -300px; opacity: 0}
-    to {top: 0; opacity: 1}
+.modal-total-price {
+  margin: 0 0 0 0%;
+}
+
+/* Modal Footer */
+.modal-footer {
+   margin: 2% 0;
+}
+
+.modal-footer > button {
+  align-items: flex-start;
+  background-color: rgb(157, 151, 136);
+  border-color: rgb(157, 151, 136);
+  border-style: solid;
+  border-width: 3px;
+  box-shadow: 3px 5px 3px rgb(136, 134, 134);
+  box-sizing: border-box;
+  cursor: pointer;
+  padding: 2px 6px 3px;
+  text-align: center;
+  width: 10%;
+}
+
+.show-modal {
+  visibility: visible;
 }

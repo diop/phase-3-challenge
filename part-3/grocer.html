@@ -3,29 +3,38 @@
   <head>
     <meta charset="utf-8">
     <title>Grocer</title>
-
     <link rel="stylesheet" href="grocer.css">
+    <script src="modal.js" charset="utf-8"></script>
   </head>
   <body class="flex flex-column">
     <header class="site-header flex flex-row-between">
       <h1>Grocer</h1>
       <button type="button" id="cart-button">
         Cart
-        &nbsp;<span id="cart-item-count">(3)</span>
+        &nbsp;<span id="cart-item-count">(0)</span>
       </button>
     </header>
-        <!-- Modal content -->
+
+    <!-- Modal content -->
+
+    <div class="modal"></div>
+
     <div class="modal-content">
       <div class="modal-header">
-        <span class="close">&times;</span>
-        <h2>Modal Header</h2>
+        <h2 class="cart-title">Cart</h2>
+        <h2 class="cart-close">X</h2>
       </div>
       <div class="modal-body">
-        <p>Some text in the Modal Body</p>
-        <p>Some other text...</p>
+        <p>Item name</p>
+        <p>Item name</p>
+        <p>Item name</p>
       </div>
       <div class="modal-footer">
-        <h3>Modal Footer</h3>
+        <button>Clear</button>
+        <div class="modal-total-section">
+          <span class="modal-total-title">Total</span>
+          <span class="modal-total-price">$0.00</span>
+        </div>
       </div>
     </div>
 
