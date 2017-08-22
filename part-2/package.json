@@ -1,0 +1,19 @@
+{
+  "name": "part-2",
+  "version": "1.0.0",
+  "description": "Phase 3 Challenge Part 2",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Fode Diop",
+  "license": "MIT",
+  "dependencies": {
+    "pg-promise": "^6.5.1",
+    "postgresql": "0.0.1"
+  },
+  "devDependencies": {
+    "chai": "^4.1.1",
+    "mocha": "^3.5.0"
+  }
+}
