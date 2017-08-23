@@ -4,12 +4,11 @@
   "description": "Phase 3 Challenge Part 2",
   "main": "app.js",
   "scripts": {
-    "test": "mocha js:babel-core/register ./database_test.js || True",
-    "dbinit": "dropdb grocery_store; createdb grocery_store; psql grocery_store < ./schema.sql; psql grocery_store < ./load-data.sql",
-    "dropdb": "dropdb grocery_store",
-    "createdb": "createdb grocery_store",
-    "schemaUpdate": "psql grocery_store < ./schema.sql",
-    "seedData": "psql grocery_store < ./load-data.sql"
+    "test": "mocha ./database_test || True",
+    "db:create": "createdb grocery_store",
+    "db:schema": "psql -d grocery_store < schema.sql",
+    "db:seed": "psql -d grocery_store < load-data.sql",
+    "db:reset": "dropdb grocery_store && createdb grocery_store && psql -d grocery_store < schema.sql && psql -d grocery_store < load-data.sql"
   },
   "author": "Fode Diop",
   "license": "MIT",
