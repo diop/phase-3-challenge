@@ -1,20 +1,20 @@
 const connection = require('./connection')
 const queries = require('./queries')
 
-const getProductsBySection = section => {
-	return db.any(queries.productsBySection(), section)
+const productList = section => {
+	return db.any(queries.getProductList(), section)
 }
 
-const getOrdersByShopperId = id => {
-  return db.any(queries.ordersByShopperId(), id)
+const shopperOrders = id => {
+  return db.any(queries.getShopperOrder(), id)
 }
 
-const getAllRealShoppers = () => {
-  return db.any()
+const realShoppers = () => {
+  return db.any(queries.getRealShoppers())
 }
 
 module.exports = {
-  getProductsBySection,
-  getOrdersByShopperId,
-  getAllRealShoppers
+  productList,
+  shopperOrders,
+  realShoppers
 }

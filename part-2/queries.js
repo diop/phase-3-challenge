@@ -1,10 +1,10 @@
 const queries = () => {
 
-  productsBySection: () => {
+  getProductList: () => {
     return `SELECT name FROM grocery_items WHERE section = $1`
   },
 
-  ordersByShopperId: () => {
+  getShopperOrder: () => {
     return `
       SELECT orders.id, SUM(CAST(grocery_items.price AS REAL))
       FROM orders
@@ -14,7 +14,7 @@ const queries = () => {
     `
   },
 
-  allRealShoppers: () => {
+  getRealShoppers: () => {
     return `
       SELECT shoppers.name, COUNT(DISTINCT orders.id)
       FROM orders
