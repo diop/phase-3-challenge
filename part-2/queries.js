@@ -1,8 +1,11 @@
 const queries = () => {
 
   getProductList: () => {
-    return `SELECT name FROM grocery_items WHERE section = $1`
-  },
+    return `
+      SELECT name
+      FROM grocery_items 
+      WHERE section = $1`;
+},
 
   getShopperOrder: () => {
     return `
@@ -11,7 +14,7 @@ const queries = () => {
       INNER JOIN grocery_items ON orders.item_id = grocery_items.id
       WHERE shopper_id = $1
       GROUP BY orders.id
-    `
+    `;
   },
 
   getRealShoppers: () => {
@@ -20,7 +23,7 @@ const queries = () => {
       FROM orders
       INNER JOIN shoppers ON orders.shopper_id = shoppers.id
       GROUP by shoppers.name
-    `
+    `;
   }
 
 }
