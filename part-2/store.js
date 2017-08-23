@@ -1,4 +1,5 @@
 #!/usr/local/bin/node
+
 const db = require('./database')
 const { listProducts, listOrders, listShoppers} = require('./list')
 
