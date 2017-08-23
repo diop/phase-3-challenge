@@ -1,9 +1,9 @@
 const print = require('node-print')
 
 const {
-  getProductsBySection,
-  getOrdersByShopperId,
-  getAllRealShoppers
+  	getProductsBySection,
+  	getOrdersByShopperId,
+  	getAllRealShoppers
 } = require('./database.js')
 
 
@@ -27,11 +27,11 @@ const realShoppers = () => {
 
 const input = (arg1, arg2) => {
 	switch (arg1) {
-		case "product-list": productSection(arg2)
+		case 'product-list': productSection(arg2)
 		    break;
-		case "shopper-orders": ordersById(arg2)
+		case 'shopper-orders': ordersById(arg2)
 		    break;
-		case "real-shoppers": realshoppers()
+		case 'real-shoppers': realShoppers()
 		    break;
 		default:
 	}
