@@ -1,4 +1,4 @@
-const client = require('./client')
+const db = require('./client')
 const queries = require('./queries')
 
 const productList = section => {
