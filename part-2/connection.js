@@ -1,5 +1,5 @@
 const pgp = require('pg-promise')();
-const CONNECTION_STRING = `postgresql://localhost:5432/grocery_store`
-const db = pgp( CONNECTION_STRING )
+const connectionString = 'postgres://localhost:5432/grocery_store'
+const db = pgp(connectionString)
 
-module.exports = client
+module.exports = connection
