@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Grocer</title>
     <link rel="stylesheet" href="grocer.css">
+    <script src="grocer.js"></script>
   </head>
   <body class="flex flex-column">
     <header class="site-header flex flex-row-between">
@@ -13,26 +14,6 @@
         &nbsp;<span id="cart-item-count">(0)</span>
       </button>
     </header>
-
-    <!-- Modal content -->
-
-    <div class="modal-overlay"></div>
-
-    <div class="modal-container">
-      <div class="modal-header">
-        <h2 class="cart-title">Cart</h2>
-        <h2 class="cart-close">X</h2>
-      </div>
-      <div class="modal-items-section"></div>
-
-      <div class="modal-footer">
-        <button>Clear</button>
-        <div class="modal-total-section">
-          <span class="modal-total-title"><stong>Total</stong></span>
-          <span class="modal-total-price"><stong>$0.00</stong></span>
-        </div>
-      </div>
-    </div>
 
     <div class="flex flex-full">
       <div class="sidebar">
@@ -92,7 +73,24 @@
           </li>
         </ul>
       </div>
+
+      <div id="my-modal" class="modal">
+        <div class="modal-column">
+          <div class="modal-row">
+            <h1>Cart</h1>
+            <span class="close"><h1>X</h1></span>
+          </div>
+
+          <div class="item-container">
+          </div>
+
+          <div class="modal-row">
+            <button type="button" onclick="clearCart()">Clear</button>
+            <p>Total <span class="total-cost">$0.00</span></p>
+          </div>
+        </div>
+      </div>
+
     </div>
-  <script src="grocer.js" charset="utf-8"></script>
   </body>
 </html>
