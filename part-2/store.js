@@ -33,7 +33,8 @@ const input = (arg1, arg2) => {
 		    break;
 		case "real-shoppers": realshoppers()
 		    break;
-	default:
+		default:
+	}
 }
 
 input(process.argv[2], process.argv[3])
