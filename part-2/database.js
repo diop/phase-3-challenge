@@ -1,7 +1,6 @@
 const pgp = require('pg-promise')();
-const CONNECTION_STRING = `pg://${process.env.USER}@localhost:5432/grocery_store`
-const db = pgp( CONNECTION_STRING )
-
+const connectionString = 'postgres://localhost:5432/grocery_store'
+const db = pgp(connectionString)
 
 const getProductsBySection = section => {
 	return db.any(`
@@ -24,7 +23,19 @@ const getOrdersByShopperId = id => {
   `)
 }
 
+const getAllRealShoppers = () => {
+  return db.any(`
+    SELECT shoppers.first, COUNT(orders.id) FROM order_items
+    JOIN orders
+    ON orders.id = order_items.id
+    JOIN shoppers
+    ON shoppers.id = orders.shopper_id
+    GROUP BY shoppers.first
+  `)
+}
+
 module.exports = {
   getProductsBySection,
   getOrdersByShopperId,
+  getAllRealShoppers
 }

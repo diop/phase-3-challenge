@@ -1,10 +1,11 @@
 const chai = require('chai')
 const assert = chai.assert
-const getProductBySection = require('./db.js')
-const getOrdersByShopperId = require('./db.js')
+const getProductBySection = require('./database.js')
+const getOrdersByShopperId = require('./database.js')
+const getAllRealShoppers = require('./database.js')
 
 describe('getProductBySection', () => {
-	it('should test product-list', () => {
+	it('should test `product-list`', () => {
 		return getProductBySection('dairy')
 		.then(results => {
 			assert(results[0]['name'], 'Butter')
@@ -16,13 +17,25 @@ describe('getProductBySection', () => {
 })
 
 describe( 'getOrdersByShopperId( id )', () => {
-  it( 'test the database function for the command `shopper-orders`', () => {
+  it( 'should test `shopper-orders`', () => {
     return getOrdersByShopperId( '2' )
     .then( results => {
       assert(results[0]["id"], '2')
       assert(results[1]["id"], '7')
       assert(results[0]["total_cost"], '19.62')
       assert(results[1]["total_cost"], '9.33')
+    })
+  })
+})
+
+describe( 'getAllRealShoppers()', () => {
+  it( ' should the command `real-shoppers`', () => {
+    return getAllRealShoppers()
+    .then( results => {
+      assert(results[0]["fname"], 'Michael')
+      assert(results[3]["fname"], 'Beyonce')
+      assert(results[0]["count"], '4')
+      assert(results[1]["count"], '4')
     })
   })
 })
