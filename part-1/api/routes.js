@@ -22,3 +22,5 @@ router.post('/array/concat', (request, response, next) => {
     .header('content-type', 'application/json')
     .json( {"error": "Input data should be of type Array."} )
 })
+
+module.exports = router
