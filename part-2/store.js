@@ -1,9 +1,10 @@
 const print = require('node-print')
+const db = require('./database')
 
 const {
-  	getProductsBySection,
-  	getOrdersByShopperId,
-  	getAllRealShoppers
+  	productList,
+  	shopperOrders,
+  	realShoppers
 } = require('./database.js')
 
 
@@ -27,13 +28,23 @@ const realShoppers = () => {
 
 const input = (arg1, arg2) => {
 	switch (arg1) {
-		case 'product-list': productSection(arg2)
-		    break;
-		case 'shopper-orders': ordersById(arg2)
-		    break;
-		case 'real-shoppers': realShoppers()
-		    break;
-		default:
+    case 'product-list':
+    db.productList(arg2)
+      .then(listProducts)
+      .catch(errorHandler);
+    break;
+  case 'shopper-orders':
+    db.shopperOrders(arg2)
+      .then(listOrders)
+      .catch(errorHandler);
+    break;
+  case 'real-shoppers':
+    db.realShoppers()
+      .then(listRealShoppers)
+      .catch(errorHandler);
+    break;
+  default:
+    console.log('Please enter a valid command.')
 	}
 }
 
