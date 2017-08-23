@@ -19,4 +19,4 @@ const listShoppers = () => {
   print.pt(list)
 }
 
-module.exports = print
+module.exports = { listProducts, listOrders, listShoppers }

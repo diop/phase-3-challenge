@@ -3,7 +3,7 @@ const queries = () => {
   getProductList: () => {
     return `
       SELECT name
-      FROM grocery_items 
+      FROM grocery_items
       WHERE section = $1`;
 },
 

@@ -1,8 +1,8 @@
 const expect = require('chai').expect
 const db = require('./database')
 
-describe('product-list', () => {
-  it('returns an array', (done) => {
+describe('productList', () => {
+  it('returns an array', done => {
     db.productList('dairy')
       .then((list) => {
         expect(list).to.be.a('Array');
@@ -12,8 +12,8 @@ describe('product-list', () => {
   })
 })
 
-describe('shopper-orders', () => {
-  it('returns an array', (done) => {
+describe('shopperOrders', () => {
+  it('returns an array', done => {
     db.shopperOrders('3')
       .then((list) => {
         expect(list).to.be.a('Array');
@@ -23,8 +23,8 @@ describe('shopper-orders', () => {
   })
 })
 
-describe('read-shoppers', () => {
-  it('returns an array', (done) => {
+describe('realShoppers', () => {
+  it('returns an array', done => {
     db.realShoppers()
       .then((list) => {
         expect(list).to.be.a('Array');
