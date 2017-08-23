@@ -1,11 +1,11 @@
-const queries =  {
+const queries = {
 
   getProductList: () => {
     return `
       SELECT name
       FROM grocery_items
       WHERE section = $1`;
-},
+  },
 
   getShopperOrder: () => {
     return `

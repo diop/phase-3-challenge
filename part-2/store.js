@@ -8,7 +8,7 @@ const inputs = (arg1, arg2) => {
     case 'product-list':
     db.productList(arg2)
       .then(listProducts)
-      .catch(console.log);
+			.catch(console.log)
     break;
   case 'shopper-orders':
     db.shopperOrders(arg2)
