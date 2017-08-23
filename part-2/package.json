@@ -4,7 +4,7 @@
   "description": "Phase 3 Challenge Part 2",
   "main": "app.js",
   "scripts": {
-    "test": "mocha js:babel-core/register ./db_test.js || True",
+    "test": "mocha js:babel-core/register ./database_test.js || True",
     "dbinit": "dropdb grocery_store; createdb grocery_store; psql grocery_store < ./schema.sql; psql grocery_store < ./load-data.sql",
     "dropdb": "dropdb grocery_store",
     "createdb": "createdb grocery_store",

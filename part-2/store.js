@@ -1,6 +1,4 @@
 const print = require('node-print')
-const command = process.argv[2]
-const section = process.argv[3]
 
 const {
   getProductsBySection,
