@@ -13,8 +13,4 @@ const realShoppers = () => {
   return db.any(queries.getRealShoppers())
 }
 
-module.exports = {
-  productList,
-  shopperOrders,
-  realShoppers
-}
+module.exports = { productList, shopperOrders, realShoppers }

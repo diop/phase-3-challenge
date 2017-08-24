@@ -13,8 +13,7 @@ const queries = {
       FROM orders
       INNER JOIN grocery_items ON orders.item_id = grocery_items.id
       WHERE shopper_id = $1
-      GROUP BY orders.id
-    `;
+      GROUP BY orders.id`;
   },
 
   getRealShoppers: () => {
@@ -22,8 +21,7 @@ const queries = {
       SELECT shoppers.name, COUNT(DISTINCT orders.id)
       FROM orders
       INNER JOIN shoppers ON orders.shopper_id = shoppers.id
-      GROUP by shoppers.name
-    `;
+      GROUP by shoppers.name`;
   }
 
 }
